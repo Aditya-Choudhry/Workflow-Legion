@@ -37,3 +37,39 @@ Band is the collaboration layer. Agents must communicate, share context, delegat
 - LangGraph only inside individual agents
 - React / Next.js dashboard
 - Supabase Postgres or SQLite fallback
+
+## Current Backend Progress
+
+This branch adds a deterministic backend demo path that can run safely before live Band credentials are available.
+
+Implemented:
+
+- Typed incident, finding, evidence, timeline, and final report models.
+- Deterministic outputs for Triage, Threat Intel, Forensics, Compliance, and Commander agents.
+- In-memory incident state for the WL-INC-001 demo.
+- Final incident report generation.
+- Band.ai-safe client wrapper that only sends messages when credentials are configured.
+- FastAPI endpoints for starting/resetting the demo, reading incident state, reading the final report, and testing Band delivery.
+
+Useful endpoints:
+
+- `GET /health`
+- `GET /api/incidents/wl-inc-001`
+- `POST /api/incidents/wl-inc-001/reset`
+- `POST /api/incidents/wl-inc-001/start`
+- `GET /api/incidents/wl-inc-001/report`
+- `POST /api/band/test-message`
+
+Issue coverage:
+
+- Solves #28: deterministic mock outputs for all five agents.
+- Solves most of #12: incident state and agent findings are stored in memory for the MVP demo.
+- Solves #13: final incident report output is generated from agent findings.
+- Supports #29: backend health, settings, provider router imports, and demo endpoints were verified locally.
+- Prepares #3, #6, and #11: Band.ai configuration and a guarded Band message client are in place, but live completion still requires Band chat ID, agent API key, and exact mention handles.
+
+Safety notes:
+
+- Do not commit real Band, OpenAI, Anthropic, Featherless, or AI/ML API keys.
+- Use `.env` locally and keep `.env.example` as placeholders only.
+- `POST /api/band/test-message` returns a configuration error instead of attempting a live post when Band credentials are missing.

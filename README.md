@@ -90,3 +90,7 @@ Current integration direction:
 - **AI/ML API** — Validated model provider for Band-connected agent reasoning experiments.
 - **Featherless** — Planned optional open-model provider for Compliance or Commander reasoning.
 - **Native.Builder / NativelyAI** — Showcase and productization layer, not the core runtime.
+
+## Screenshot Archive
+<img width="2141" height="1521" alt="Proof_of_REMOTE_agent_posting app band ai" src="https://github.com/user-attachments/assets/da38fd2f-4998-41f9-8fc5-dd35028a0941" />
+

@@ -73,6 +73,7 @@ Safety notes:
 - Do not commit real Band, OpenAI, Anthropic, Featherless, or AI/ML API keys.
 - Use `.env` locally and keep `.env.example` as placeholders only.
 - `POST /api/band/test-message` returns a configuration error instead of attempting a live post when Band credentials are missing.
+- Incident posting preserves visible role handoff text. Until Threat Intel, Forensics, Compliance, and Commander remote Band agents are added as participants in the Band room, the actual Band mention payload may fall back to `BAND_DEFAULT_MENTION_HANDLES` such as `redhood`, and the delivery detail reports that fallback.
 
 ## Validated Integration Notes
 

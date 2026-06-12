@@ -9,6 +9,19 @@ class Settings(BaseSettings):
     band_room_id: str | None = None
     openai_api_key: str | None = None
     anthropic_api_key: str | None = None
+    openai_model: str | None = None
+    anthropic_model: str | None = None
+
+    featherless_api_key: str | None = None
+    featherless_base_url: str = "https://api.featherless.ai/v1"
+    featherless_model: str | None = None
+
+    aimlapi_api_key: str | None = None
+    aimlapi_base_url: str = "https://api.aimlapi.com/v1"
+    aimlapi_model: str | None = None
+
+    llm_provider: str = "openai"
+    llm_fallback_provider: str = "featherless"
 
     class Config:
         env_file = ".env"

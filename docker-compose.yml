@@ -1,0 +1,21 @@
+﻿services:
+  redis:
+    image: redis:7-alpine
+    container_name: workflow-legion-redis
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: workflow-legion-postgres
+    environment:
+      POSTGRES_USER: workflow_legion
+      POSTGRES_PASSWORD: workflow_legion
+      POSTGRES_DB: workflow_legion
+    ports:
+      - "5432:5432"
+    volumes:
+      - workflow_legion_pgdata:/var/lib/postgresql/data
+
+volumes:
+  workflow_legion_pgdata:

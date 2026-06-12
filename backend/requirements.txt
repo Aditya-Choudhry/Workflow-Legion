@@ -1,0 +1,14 @@
+﻿fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+sqlmodel
+sqlalchemy
+python-dotenv
+httpx
+websockets
+redis
+arq
+langgraph
+openai
+anthropic

@@ -234,6 +234,14 @@ No sponsor codes or QR links.
 Band remains the core collaboration layer.
 Native.Builder packages the story and presentation; it does not coordinate the agents.
 
+Local showcase build note:
+
+Path: frontend-showcase/
+Stack: Vite + React + TypeScript
+Validation: npm install; npm run build; build passed with Vite 8.0.16.
+Purpose: static hackathon/productization showcase. The Native.Builder/NativelyAI-inspired flow was recreated locally because GitHub sync/export was unavailable in the current Natively workspace.
+Safety: no backend calls, no Supabase, no auth, no forms, no API keys, no environment files, and no secrets.
+
 The showcase currently states the honest proof level:
 
 Workflow Triage Remote Agent is validated. The full five-agent remote Band room is the planned expansion path.

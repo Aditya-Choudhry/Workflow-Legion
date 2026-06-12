@@ -1,4 +1,3 @@
-<img width="2141" height="1521" alt="Proof_of_REMOTE_agent_posting app band ai" src="https://github.com/user-attachments/assets/53b2d51f-1f6a-452e-82d9-97a055aa554c" />
 Workflow Legion: Cyber Incident Command Room
 
 Workflow Legion is a Band-native multi-agent cyber incident response system built for the Band of Agents Hackathon.

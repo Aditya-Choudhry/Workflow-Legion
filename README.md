@@ -73,3 +73,19 @@ Safety notes:
 - Do not commit real Band, OpenAI, Anthropic, Featherless, or AI/ML API keys.
 - Use `.env` locally and keep `.env.example` as placeholders only.
 - `POST /api/band/test-message` returns a configuration error instead of attempting a live post when Band credentials are missing.
+
+## Validated Integration Notes
+
+### Band + AI/ML API Validation
+
+Workflow Legion's target architecture is a Band remote-agent system. Agents run from this repository and connect to Band through the Band API, while Band provides the shared command room, participant identity, @mention routing, visible handoffs, and the collaboration audit trail.
+
+During early Band validation, the team confirmed that a Triage Agent could generate a structured WL-INC-001 response using AI/ML API-backed inference. That internal-agent test is retained as sponsor validation and model-provider proof, but it is not the final runtime architecture.
+
+Current integration direction:
+
+- **Band** — Core remote-agent collaboration fabric.
+- **Python/FastAPI** — Agent runtime, deterministic incident workflow, and API layer.
+- **AI/ML API** — Validated model provider for Band-connected agent reasoning experiments.
+- **Featherless** — Planned optional open-model provider for Compliance or Commander reasoning.
+- **Native.Builder / NativelyAI** — Showcase and productization layer, not the core runtime.
